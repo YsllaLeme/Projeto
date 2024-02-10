@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(0, 0, 0);
+            color: rgb(221, 105, 28);
+            font-size: larger;
+            font-style: oblique;
+            display: flex;
+            justify-content: center;
+            background-image: url(imagens/HD-wallpaper-darth-vader-dark-side-star-starwars-wars.jpg);
+            background-size: cover;
+            background-position: 0px; 
+            background-attachment: fixed;
+            
+        }
+        
+        .atv1{
+            border: 2px solid rgb(255, 107, 39);
+            padding: 10px;
+            margin: 100px;
+            transition: background-color 0.5s;
+        }
+        .atv1:hover{
+            background-color: rgba(0, 0, 0, 5);
+        }
+
+        .entrada, .btu, btu select, .btn, .botao{
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        
+        .btx, entrada textarea{
+            margin: 20px 30px;
+
+        }
+        .botao{
+            background-color: aliceblue;
+        }
+
+        footer{
+            position: fixed;
+            bottom: 0;
+        }
+    
+
+    </style>
+</head>
+<body>
+    <div class="btn1">
+        <a href="home.html" target="_blank">Home|</a>
+        <a href="blog.html" target="_blank">Blog|</a>
+        <a href="pagina1.html" target="_blank">Pagina 1|</a>
+        <a href="pagina2.html" target="_blank">Pagina 2|</a>
+       <a href="contato.html">Contato</a> 
+    </div>
+    
+    <div class="top">
+    
+    <form action="" method="post" class="atv1">
+        <h1>Contato <br>
+            <h4 class="titulo2"> Preencha todos os campos</h4>
+        </h1>
+        <div>
+            <div class="btu">Nome: </div>
+            <input id="Nome" type="text" name="Nome" placeholder="nome completo" class="entrada">
+        </div>
+
+        <div>
+            <div class="btu"> Email: </div>
+            <input id="email" type="email" name="email" placeholder="Email valido" class="entrada">
+        </div>
+        <div>
+            <div class="btu">Assunto: </div>
+            <select name="opcoes" class="btu">
+                <option value="" disabled selected>Selecione opções a seguir</option>
+                <option value="Dúvidas do produto">Dúvidas do produto</option>
+                <option value="Ativação de Token">Ativação de Token</option>
+                <option value="Rastreio">Link de rastreio</option>
+            </select>
+        </div>
+        <div>
+            <div class="btx">Digite aqui sua mensagem: </div>
+            <textarea name="mensagem" id="mensagem" placeholder="Digite aqui" class="entrada cols="30" rows="10"></textarea>
+        </div>
+
+        <div>
+            <input type="button" value="Enviar" class="botao">
+        </div>
+</form>
+</div>
+
+    <footer>&copy; 2023 2023 Yslla Leme - Progração Web - Cruzeiro do sul  </footer>
+</body>
+</html>

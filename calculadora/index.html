@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" type="text/css">
+</head>
+<body>
+    <h1>Calculadora Simples</h1>
+    
+    <form id="calculator-form">
+        <div>
+        <label class="v1" for="value1"><strong>Valor 1:</strong></label>
+        <input type="number" id="value1" required onkeydown="if (event.key === 'Enter') { logValue1(); document.getElementById('value2').focus(); }">
+        <br>
+        <label class="v1" for="value2"><strong>Valor 2:</strong></label>
+        <input type="number" id="value2" required onkeydown="if (event.key === 'Enter') { logValue2(); }">
+        <br>
+        </div>
+        <p class="paraf"><strong>Opções:</strong></p>
+        <div>
+            <input type="radio" name="operacao" value="soma" id="soma"> <label class="v1" for="soma">SOMA</label> <br>
+            <input type="radio" name="operacao" value="subtracao" id="subtracao"><label class="v1" for="subtracao"> SUBTRAÇÃO</label> <br>
+            <input type="radio" name="operacao" value="multiplicacao" id="multiplicacao"> <label class="v1"for="multiplicacao">MULTIPLICAÇÃO</label> <br>
+            <input type="radio" name="operacao" value="divisao" id="divisao"> <label class="v1" for="divisao">DIVISÃO</label>
+        </div>
+        <p><strong>Resultado:</strong></p>
+        <div class="result-container">
+            <div id="result"></div>
+        </div>
+        </div><br>
+    
+        <button class="v1" type="button" onclick="calculate()">Calcular</button>
+    
+    </form><br>
+
+    
+
+    <script>
+
+        function logValue1() {
+        const value1 = Number(document.getElementById("value1").value);
+        console.log("Valor 1: " + value1);
+    }
+
+    function logValue2() {
+        const value2 = Number(document.getElementById("value2").value);
+        console.log("Valor 2: " + value2);
+    }
+
+         function calculate() {
+            const value1 = Number(document.getElementById("value1").value);
+            const value2 = Number(document.getElementById("value2").value);
+
+            const operationElements = document.getElementsByName("operacao");
+            let operation;
+
+            for (const element of operationElements) {
+                if (element.checked) {
+                    operation = element.value;
+                    break;
+                }
+            }
+
+            let result;
+            if (operation === "soma") {
+                result = value1 + value2;
+            } else if (operation === "subtracao") {
+                result = value1 - value2;
+            } else if (operation === "multiplicacao") {
+                result = value1 * value2;
+            } else if (operation === "divisao") {
+                if (value2 !== 0) {
+                    result = value1 / value2;
+                } else {
+                    result = "Erro: divisão por zero!";
+                }
+            }
+
+        console.log("Operação: " + operation);
+        console.log("Resultado: " + result);
+
+            document.getElementById("result").textContent = `${result}`;
+        }
+    </script>
+</body>
+</html>
